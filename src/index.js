@@ -2,19 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Store from './store.js';
 import App from './app.js';
+import {DEFAULT_COUNT} from './constants.js'
 
 const root = document.getElementById("app");
 
 // Состояние приложения
 const store = new Store({
   items: [
-    {code: 1, title: 'Название элемента'},
-    {code: 2, title: 'Некий объект'},
-    {code: 3, title: 'Заголовок'},
-    {code: 4, title: 'Короткое название'},
-    {code: 5, title: 'Запись'},
-    {code: 6, title: 'Пример названия'},
-    {code: 7, title: 'Седьмой'}
+    {code: 1, title: 'Название элемента', count: DEFAULT_COUNT},
+    {code: 2, title: 'Некий объект', count: DEFAULT_COUNT},
+    {code: 3, title: 'Заголовок', count: DEFAULT_COUNT},
+    {code: 4, title: 'Короткое название', count: DEFAULT_COUNT},
+    {code: 5, title: 'Запись', count: DEFAULT_COUNT},
+    {code: 6, title: 'Пример названия', count: DEFAULT_COUNT},
+    {code: 7, title: 'Седьмой', count: DEFAULT_COUNT}
   ]
 });
 

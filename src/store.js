@@ -1,3 +1,5 @@
+import {DEFAULT_COUNT} from './constants.js'
+
 class Store {
   constructor(initState) {
     // Состояние приложения (данные)
@@ -48,10 +50,11 @@ class Store {
    */
   createItem() {
     const code = Math.max(0, ...this.state.items.map(item => item.code)) + 1;
+    const count = DEFAULT_COUNT
     this.setState({
       items: this.state.items.concat({
         code,
-        title: 'Новая запись №'+code
+        title: 'Новая запись №'+code, count
       })
     });
   }
@@ -74,7 +77,9 @@ class Store {
     this.setState({
       items: this.state.items.map(item => {
         if (item.code === code){
+          const count = item.selected ? item.count +1: item.count
           item.selected = !item.selected;
+          item.count = count
         }
         return item;
       })
